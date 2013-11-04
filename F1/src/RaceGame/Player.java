@@ -12,9 +12,9 @@ public class Player {
 	public static final int MAX_TOP = 60; // max verhniaya poziciya avto
 	public static final int MAX_BOTTOM = 510; // max nizhniaya poziciya avto
 
-	Image img_c = new ImageIcon("res/player.png").getImage();
-	Image img_l = new ImageIcon("res/player_left.png").getImage();
-	Image img_r = new ImageIcon("res/player_right.png").getImage();
+	Image img_c = new ImageIcon(getClass().getClassLoader().getResource("res/player.png")).getImage();
+	Image img_l = new ImageIcon(getClass().getClassLoader().getResource("res/player_left.png")).getImage();
+	Image img_r = new ImageIcon(getClass().getClassLoader().getResource("res/player_right.png")).getImage();
 
 	Image img = img_c;
 

@@ -14,7 +14,7 @@ public class Enemy {
 	int y;
 	int v;
 	Road road;
-	Image img = new ImageIcon("res/enemy.png").getImage();
+	Image img = new ImageIcon(getClass().getClassLoader().getResource("res/enemy.png")).getImage();
 
 	public Rectangle getRect() {
 		return new Rectangle(x, y, 330, 90);

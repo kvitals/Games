@@ -11,7 +11,7 @@ public class AudioThread implements Runnable {
 	@Override
 	public void run() {
 		try {
-			Player p = new Player(new FileInputStream("res/song.mp3"));
+			Player p = new Player(new FileInputStream(getClass().getClassLoader().getResource("res/song.mp3").getPath()));
 			p.play();
 		} catch (FileNotFoundException | JavaLayerException e) {
 			e.printStackTrace();

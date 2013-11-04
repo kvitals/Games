@@ -23,7 +23,7 @@ public class Road extends JPanel implements ActionListener, Runnable {
 
 	Timer mainTimer = new Timer(20, this);
 
-	Image img = new ImageIcon("res/bg_road.png").getImage();
+	Image img = new ImageIcon(getClass().getClassLoader().getResource("res/bg_road.png")).getImage();
 
 	Player p = new Player();
 
@@ -67,7 +67,8 @@ public class Road extends JPanel implements ActionListener, Runnable {
 		g.setFont(font);
 
 		g.drawString("Speed = " + v + " km/h", 100, 655);
-
+		g.drawString("Distance = " + p.s/500 + " km", 600, 655);
+		
 		Iterator<Enemy> i = enemies.iterator();
 		while (i.hasNext()) {
 			Enemy e = i.next();
@@ -91,8 +92,6 @@ public class Road extends JPanel implements ActionListener, Runnable {
 			k.move();
 		}
 		repaint(); // perezapusk metoda "paint"
-		// System.out.println(enemies.size()); //smotrim za kolichestvom enemies
-		// v spiske
 		testCollisionWithEnemy();
 		testWin();
 
@@ -100,7 +99,11 @@ public class Road extends JPanel implements ActionListener, Runnable {
 
 	private void testWin() {
 		if (p.s > 50000) {
-			JOptionPane.showMessageDialog(null, "<< Вы выиграли!!!>>");
+<<<<<<< HEAD
+			JOptionPane.showMessageDialog(null, "<< пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!!!>>");
+=======
+			JOptionPane.showMessageDialog(null, "<< You WON!!!>>");
+>>>>>>> added access to "res"
 			System.exit(0);
 		}
 
@@ -113,7 +116,11 @@ public class Road extends JPanel implements ActionListener, Runnable {
 			Enemy e = i.next();
 			if (p.getRect().intersects(e.getRect())) {
 				JOptionPane.showMessageDialog(null,
-						"<< Произошло столкновение. Авто в ремонте.>>");
+<<<<<<< HEAD
+						"<< пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ.>>");
+=======
+						"<< Sorry, the collision occurred. Try again.>>");
+>>>>>>> added access to "res"
 				System.exit(0);
 			}
 
